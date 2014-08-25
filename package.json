@@ -1,0 +1,19 @@
+{
+    "name": "powdertothepeople",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/stenmuchow/powdertothepeople.tv.git"
+    },
+    "author": "Sten Muchow",
+    "bugs": {
+        "url": "https://github.com/stenmuchow/powdertothepeople.tv/issues"
+    },
+    "homepage": "https://github.com/stenmuchow/powdertothepeople.tv",
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-contrib-sass": "~0.7.3",
+        "load-grunt-tasks": "^0.6.0"
+
+    }
+}
