@@ -3,28 +3,17 @@ layout: page
 title: About
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+At the moment there isn't a whole lot going on here as powdertothepeople.tv has morphed from my previous project PTTP which was very much not a place to read about JS and Beer,
+instead a place to see snowboarding porn. 
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+The old site is still available [here](http://www.powdertothepeople.tv/pttp/index.html), it was my very first site I ever built and still possesses nostalgia for me.
+ 
+Anyways I will be writing about things I learn, and feel the need to share, on my new journey as a JS developer focused on Angular (at the moment), and also if I feel 
+the need to share anything about beer. I do live in the micro-brew capital of Europe - The Netherlands - so it would be a shame to not mention any beers along the way. 
+Oh there are so many - I wouldn't know where to start or stop...until I do know - long live JS and long live delicious craft beer.
 
-There are currently two themes built on Poole:
+###Contact###
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+<span><i class="fa fa-envelope-o"></i> <a href="mailto:sten_muchow@yahoo.com">sten_muchow@yahoo.com</a></span>
 
-Learn more and contribute on [GitHub](https://github.com/poole).
-
-## Setup
-
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
+This site is written using [Jekyll](http://jekyllrb.com/) & [Hyde](http://hyde.getpoole.com/) with the simplistic elegance of [markdown](https://help.github.com/articles/markdown-basics).
