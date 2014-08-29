@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        tr:nth-child(even) {
+            background: red;
+        }
+        tr:nth-child(odd) {
+            background: green;
+        }
+        tr:nth-child(1) {
+            background: none;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+<table id="table">
+    <tr class="header">
+        <th>Name</th>
+        <th>Product ID</th>
+        <th id="description">Product Description</th>
+        <th>Date</th>
+        <th id="quantity">Quantity</th>
+    </tr>
+    <tr class="data">
+        <td>Smoke</td>
+        <td>1A</td>
+        <td>Fad</td>
+        <td>April 1</td>
+        <td>45</td>
+    </tr>
+    <tr class="data">
+        <td>Leaf</td>
+        <td>2B</td>
+        <td>Whistle</td>
+        <td>September 5</td>
+        <td>2</td>
+    </tr>
+    <tr class="data">
+        <td>Frown</td>
+        <td>3C</td>
+        <td>Bank</td>
+        <td>August 8</td>
+        <td>34</td>
+    </tr>
+    <tr class="data">
+        <td>Creation</td>
+        <td>4D</td>
+        <td>Beggar</td>
+        <td>January 9</td>
+        <td>90</td>
+    </tr>
+    <tr class="data">
+        <td>Locust</td>
+        <td>6E</td>
+        <td>Cork</td>
+        <td>December 23</td>
+        <td>76</td>
+    </tr>
+</table>
+
+<script>
+var tableRow, table, quantity, description;
+    window.onload = function() {
+
+            tableRow = document.getElementsByClassName('data'); //returns a live node list
+            table = document.getElementById('table');
+            quantity = document.getElementById('quantity');
+            description = document.getElementById('description');
+
+
+
+        var//iable array clones
+            quantitySort = Array.prototype.slice.apply(tableRow),
+            descriptionSort = Array.prototype.slice.apply(tableRow)
+        ;
+
+        //Sorting comparator functions
+        function sortRowsByNumber(a,b) {
+            return a.cells[4].innerHTML === b.cells[4].innerHTML ? 0 : (a.cells[4].innerHTML > b.cells[4].innerHTML ? 1 : -1)
+        }
+
+        function sortRowsByAlpha(a,b) {
+            return a.cells[2].innerHTML === b.cells[2].innerHTML ? 0 : (a.cells[2].innerHTML > b.cells[2].innerHTML ? 1 : -1)
+        }
+
+
+        //Sorting Functions
+        function sortQuantity() {
+            for(var j = 0; j < tableRow.length; j+=1) {
+                table.children[0].appendChild(quantitySort[j]);
+            }
+            quantitySort.reverse();
+        }
+
+        function sortDescription() {
+            for(var j = 0; j < tableRow.length; j+=1) {
+                table.children[0].appendChild(descriptionSort[j]);
+            }
+            descriptionSort.reverse();
+        }
+
+        //Sort the Arrays
+        quantitySort.sort(sortRowsByNumber);
+        descriptionSort.sort(sortRowsByAlpha);
+
+
+        //Bind Event Listeners
+        quantity.addEventListener('click', sortQuantity);
+        description.addEventListener('click', sortDescription)
+
+    };
+
+
+</script>
+
+</body>
+</html>
