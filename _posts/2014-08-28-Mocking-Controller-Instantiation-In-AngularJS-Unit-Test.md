@@ -14,17 +14,17 @@ As AngularJS is built upon modularity of code, our unit tests should be no diffe
 First off I think it's important to note why I am asking this question in the first place. You might be thinking to yourself
 well just include the module and you're good.
  
-{% highlight javascript %}
+```javascript
     
     module('PTTP.Controllers.PowWow');
     
-{% endhighlight %}
+```
 
 If you think this, then yes you are completely correct there is no need to mock a controller we can just include, but what if 
 that controller has other dependencies? Do we want to include all of those as well so we end up with this dependency tree of 
 modules just to set up a unit test for our *PowWow* directive? 
 
-{% highlight javascript %}
+```javascript
 
     module('PTTP.Directives.PowWow');
     module('PTTP.Controllers.PowWow');
@@ -32,7 +32,7 @@ modules just to set up a unit test for our *PowWow* directive?
     module('PTTP.Service.SomeService'); // <--- Comes from the PowWow controller dependency
     module('PTTP.Service.SomeOtherService'); // <--- Comes from the SomeService dependency
   
-{% endhighlight %}
+```
 
 This is *not* the way I want my unit test to be set up. I want it as transparent as possible. I want to look at my module includes
 and know exactly what I am testing. 
@@ -41,7 +41,7 @@ and know exactly what I am testing.
 
 This is that freedom you are looking for and it's so much easier than you might have thought.
 
-{% highlight javascript %}
+```javascript
 
     module('PTTP.Directives.PowWow', function($provide, $controllerProvider) {
             $controllerProvider.register('PowWowController', function($scope) {
@@ -55,12 +55,12 @@ This is that freedom you are looking for and it's so much easier than you might 
             });
         });
     
-{% endhighlight %}
+```
 
 It's as simple as that. However it doesn't stop with controllers. We can mock providers, factories, services, values - we can mock anything
 we need to with that simple pattern.
  
-{% highlight javascript %}
+```javascript
 
     $controllerProvider.register();
     $provide.provider();
@@ -68,11 +68,11 @@ we need to with that simple pattern.
     $provide.value();
     $provide.factory();
     
-{% endhighlight %}
+```
 
 The great thing about this is we now have total control of our mocks, and an added bonus what our mocks are mocking in the way of data and methods.
 
-{% highlight javascript %}
+```javascript
 
     'use strict';
     
@@ -109,7 +109,8 @@ The great thing about this is we now have total control of our mocks, and an add
         });
     });
     
-{% endhighlight %}
+```
+
+For more info straight from the source check these links out [$provide](https://docs.angularjs.org/api/auto/service/$provide) and [$controllerProvider](http://docs.angularjs.org/api/ng/provider/%24controllerProvider)
 
 Long live mocks!
-
