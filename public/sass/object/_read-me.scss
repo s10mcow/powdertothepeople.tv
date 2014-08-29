@@ -1,0 +1,15 @@
+.read-more {
+  width: 85%;
+  margin: 30px 0 100px;
+  text-align: center;
+  font-size: large;
+  a {
+    padding: 10px;
+    border: 1px solid;
+    text-decoration: none;
+    transition: background 300ms;
+    &:hover {
+      background: rgba(43, 167, 255, 0.25)
+    }
+  }
+}
