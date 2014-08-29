@@ -25,7 +25,6 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     style: 'nested',
-                    sourcemap: 'true',
                     'cache-location': '/tmp/sass-cache'
                 },
                 files: {
@@ -42,7 +41,7 @@ module.exports = function (grunt) {
                 }
             }
 
-        },
+        }
 
     });
 
