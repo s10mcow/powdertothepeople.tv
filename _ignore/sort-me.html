@@ -66,19 +66,46 @@
 </table>
 
 <script>
-var tableRow, table, quantity, description;
+    var tableRow,
+        table,
+            quantity,
+            description;
+
     window.onload = function() {
 
-            tableRow = document.getElementsByClassName('data'); //returns a live node list
-            table = document.getElementById('table');
-            quantity = document.getElementById('quantity');
-            description = document.getElementById('description');
+        var $ = function(selector) {
+            var
+                rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
+                match = rquickExpr.exec(selector),
+                match2 = rquickExpr2.exec(selector)
+            ;
+
+
+
+            console.log(match);
+            console.log(match2);
+
+            if( match[1]) {
+                return document.getElementById(match[1]);
+            }
+            else if ( match[2] ) {
+                return document.getElementsByTagName(match[2]);
+            }
+            else if ( match[3]) {
+                return document.getElementsByClassName(match[3]);
+            }
+        };
+
+        tableRow = $('.data');
+        table = $('#table');
+        quantity = $('quantity');
+        //description = $('#description');
 
 
 
         var//iable array clones
-            quantitySort = Array.prototype.slice.apply(tableRow),
-            descriptionSort = Array.prototype.slice.apply(tableRow)
+            quantitySort = Array.prototype.slice.call(tableRow),
+            descriptionSort = Array.prototype.slice.call(tableRow)
         ;
 
         //Sorting comparator functions
@@ -93,16 +120,16 @@ var tableRow, table, quantity, description;
 
         //Sorting Functions
         function sortQuantity() {
-            for(var j = 0; j < tableRow.length; j+=1) {
-                table.children[0].appendChild(quantitySort[j]);
-            }
+            Array.prototype.forEach.call(tableRow, function(row, index) {
+                table.children[0].appendChild(quantitySort[index]);
+            });
             quantitySort.reverse();
         }
 
         function sortDescription() {
-            for(var j = 0; j < tableRow.length; j+=1) {
-                table.children[0].appendChild(descriptionSort[j]);
-            }
+            Array.prototype.forEach.call(tableRow, function(row, index) {
+                table.children[0].appendChild(descriptionSort[index]);
+            });
             descriptionSort.reverse();
         }
 
