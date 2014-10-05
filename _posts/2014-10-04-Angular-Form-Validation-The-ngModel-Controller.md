@@ -3,11 +3,13 @@ layout: post
 title: Angular Form Validation - Part 1 - ngModel Controller
 ---
 
-Form validation the Angular way is an extremely powerful tool. We have the ability to pass a simple regular expression to the ng-pattern attribute of the input field for simple input
-validation, or we can make our own custom validation functions utilizing the ngModel's controller. So you might be thinking to yourself yeah, but I can already use a pattern for validation
-in html5. True, indeed you can, but when you couple all the bits and pieces together and let Angular do its thing you have a complete tool set at your disposal. 
+Form validation the "Angular way" is an extremely powerful tool. We have the ability to pass a simple regular expression to the ng-pattern attribute of the input field for simple input
+validation, or we can make our own custom validation functions utilizing the NgModelController. 
 
-In this post I wanna show how we can use the ngModel controller in a custom validation directive to validate any piece of logic.
+So you might be thinking to yourself yeah, but I can already use a pattern for validation in html5. True, indeed you can, but when you couple all the bits and pieces 
+together and let Angular do its thing you have a complete tool set at your disposal.
+
+In this post I wanna show how we can use the NgModelController in a custom validation directive to validate any piece of logic.
 
 If you take a look at the Angular docs on the ngModel directive you see this:
 
@@ -19,7 +21,7 @@ If you take a look at the Angular docs on the ngModel directive you see this:
 * Setting related css classes on the element (ng-valid, ng-invalid, ng-dirty, ng-pristine, ng-touched, ng-untouched) including animations.
 * Registering the control with its parent form.
 
-You are no doubt already using this little piece of logic in you code and ng-model is one of the first pieces we learn when starting out with Angular - the ubiquitous hello world example.
+You are no doubt already using this little piece of logic in your code and ng-model is one of the first pieces we learn when starting out with Angular - enter the ubiquitous hello world example.
  
 ```html
 
@@ -31,7 +33,7 @@ You are no doubt already using this little piece of logic in you code and ng-mod
 
 That's right. That's all there is to the ng-model directive, it's easy to forget that every piece of code you use in the DOM from Angular is, yes, a directive.
 
-However we aren't interested in the ng-model directive we wanna get down and dirty with the ngModel controller which provides the API for the ngModel directive.
+However we aren't interested in the ng-model directive we wanna get down and dirty with the NgModelController which provides the API for the ngModel directive.
 
 Again, from the documentation.
 
@@ -59,7 +61,9 @@ angular.module('PTTP.Directives.Validation', [])
     
 ```
 
-That's the basis of the directive - and attribute, that has an isolate scope passing in a validateFunction - simple enough. So what about the linker? Well that's were the *real* goodies live.  
+That's the basis of the directive; an attribute that has an isolate scope passing in a validateFunction - simple enough. 
+
+What about the linker? Well that's where the *real* goodies live.  
 
 ```javascript
 
@@ -69,13 +73,17 @@ var linker = function(scope, element, attr, ngModelCtrl) {
                     ngModel Controller Utilization
          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-        //Utilizing the ngModel Controller we can access the validation methods provided by Angular for form validation.
         ngModelCtrl.$parsers.push(function (value) {
+            //Fire our validator function returning a boolean
             var result = scope.validatorFunction({ 'value': value });
+        
+            //Check the result to make sure it returned boolean and not undefined or null
             if (result || result === false) {
                 ngModelCtrl.$setValidity(attrs.validatorName, result);
-                return result ? value : undefined;
+                return result ? value : undefined;  //Pass the value down the pipeline - here*
+
             }
+            //*Or here
             return value;
         });
 
@@ -90,7 +98,7 @@ return value to the next function. You can think of it like this.
 
 ```javascript
 
-ngModelCtrl.$parsers = [func1, func2, func3]; //Iniital $parsers setup
+ngModelCtrl.$parsers = [func1, func2, func3]; //Initial $parsers setup
 
 ngModelCtrl.$parsers.push(func4); //Push a new function
 
@@ -104,7 +112,7 @@ From the docs...
 
 >For validation, the parsers should update the validity state using $setValidity(), and return undefined for invalid values.
 
-If we examine deeper into the passed in function we can see first off we are assigning a boolean value to result. So simple put our validatorFunction that we pass in, returns either tru or false. 
+If we examine deeper into the passed in function we can see first off we are assigning a boolean value to the result variable. So simple put our validatorFunction that we pass in, returns either true or false. 
 Next we check if the *result* is defined - either true or false. Then based on the value of the *result* we call $setValidity passing in the validatorName and the boolean *result.* Finally we
 return a value passing it along to the next function in the pipeline.
 
@@ -206,7 +214,7 @@ through it we have access to it's scoped methods and variables. In this case the
     
 ```
 
-That's pretty much all there is to it! This is the basis of the use of the NgModelController for form validation. Now go and validate the shit outta yer forms! 
+That's pretty much all there is to it! This is the basis of the use of the NgModelController for form validation. Now go and validate the shit outta yer forms!
 
 
 
