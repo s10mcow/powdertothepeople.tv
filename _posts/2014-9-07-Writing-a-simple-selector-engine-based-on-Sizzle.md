@@ -1,6 +1,6 @@
 ---
 layout: post
-title: You too can write a selector engine - Part 1
+title: You too can write a selector engine
 ---
 
 Ok so the title is a bit misleading. Yes, it is possible to write selector engine, but when we talk about a selector engine as complex as [Sizzle](http://sizzlejs.com/)
@@ -9,7 +9,7 @@ the methods that come bundled along with the selector engine.
  
 Recently my vanilla JS skills were tested and I realized - well - they could be better. We have had the crutch, if you wanna look at it that way, of jQuery helping us abstract the complexity 
 of the DOM api so trivial tasks in jQuery become difficult in vanilla JS - not all - but some. Thus lots of front end developers lack true vanilla JS skills once the crutch of jQuery is removed
-and we find ourselves struggling to stand on our own to JS legs. I say the time has never been better to learn how to walk on your own, and not just walk but run. 
+and we find ourselves struggling to stand on our own two JS legs. I say the time has never been better to learn how to walk on your own, and not just walk but run. 
 
 One day, I hope in the not to distant future when old browsers and the people using them get their act together, we wont have to deal with supporting shitty old versions of browsers I won't name names - IE -
 and the internet as whole can move forward. But this isn't supposed to be a rant about jQuery or IE, this is a rant, er, I mean an article about writing a simple selector engine.
