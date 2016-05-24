@@ -85,7 +85,6 @@ First off lets set up the states that we need transitioning. I will only show th
 *closed-state.html*
 
 ``` html
-{% raw %}
 
     <article class="col-sm-12 col-md-12 col-lg-12 panel-heading closed-state">
         <h4 class="panel-title">
@@ -95,7 +94,6 @@ First off lets set up the states that we need transitioning. I will only show th
         </h4>
     </article>
     
-{% endraw %}
 ```
 
 *order-confirmation-partial.html*
