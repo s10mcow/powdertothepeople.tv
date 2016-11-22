@@ -828,8 +828,8 @@ a.sidebar-nav-item:focus {
 
 .pow-wow {
   position: fixed;
-  bottom: -13px;
-  right: 0; }
+  bottom: -16px;
+  right: -9px; }
 
 .read-more {
   width: 85%;
