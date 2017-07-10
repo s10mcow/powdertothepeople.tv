@@ -32,23 +32,23 @@ Examples you say!?
 Lets say our component is a sidebar with a search box, underneath the search box we can have filters to further refine our search. The search component being the parent component is the "keeper" of 
 our logic. It holds onto the function that allows allows searching to take place.
 
-Here is the logic for the `<search></search>` component
+Here is the logic for the `<search></search>` component. (Single quotes here should be interpreted as backticks, kramdown markdown doesnt wanna render the backtick.)
 
 ```javascript
 
 	angular.component('search', {
 	
-		template: `
+		template: '
 		<h1>Search</h1>
 		
 		<form ng-submit="$ctrl.doSearch()">
 			<input type="text" ng-model="$ctrl.search">
 		</form>
 		
-		<ng-transclude ng-transclude-slot="filters"></ng-transclude>
-		`,
+		<ng-transclude ng-transclude-slot="searchFilters"></ng-transclude>
+		',
 		transclude: {
-			searchFilters: 'filters'
+			searchFilters: 'searchFilters'
 		},
 		controller: function() {
 			this.search = () => { //search logic };
@@ -60,6 +60,8 @@ Here is the logic for the `<search></search>` component
 ```
 
 Simple component, holds a little input for searching and also a transclusion slot with a nice little named transclusion slot for ease of semantics.
+
+`Named transclusion slots are the bomb...`
  
 So now we can focus on the next component in line. It's a ridiculously simple one, but i figured with the reuse of code lets stick it in there as well. 
 
@@ -76,12 +78,14 @@ and drop it into it's own component with - you guessed it - another transclusion
 		},
 		transclude: true,
 		controller: SearchWrapperController,
-		templateUrl: 'components/search-filters/search-wrapper/search-wrapper.html'
+		templateUrl: 'search-wrapper.html'
 	});
 
 ```
 
 We're gonna ingore the implementation details as they are a little out of scope for this article, anyways there is a simple binding that takes in name and another transclusion slot.
+
+`search-wrapper.html`
 
 ```html
 
@@ -109,25 +113,13 @@ This little guy again has some implementation details we will ignore but the con
 
         .component('filter', {
 			require: '^search',
-            templateUrl: 'components/filters/filter.component.html',
+            templateUrl: 'filter.html',
             controller: FilterController
         });
 
-    function FilterController($rootScope, $element, $timeout, gettext, SEARCH_FILTERS) {
-
-        var vm = this;
-
-		vm.$onInit = () => {
-		
-			vm.searchFct = vm.search.search;
-			
-		};
-
+    function FilterController() {   
+		this.$onInit = () => this.searchFct = this.search.search;
     }
-
-
-}());
-
 
 ```
 

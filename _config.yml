@@ -1,6 +1,8 @@
 # Dependencies
-markdown:         redcarpet
-highlighter:      pygments
+markdown:         kramdown
+highlighter:      rouge
+kramdown:
+  input: GFM
 
 # Permalinks
 permalink:        pretty
@@ -8,7 +10,7 @@ permalink:        pretty
 # Setup
 title:            Powder to the People
 tagline:          'Whatever your powder is...'
-description:      'Javscript, CSS & Beer'
+description:      'Frontend Fun!'
 url:              http://www.powdertothepeople.tv
 baseurl:          /
 
