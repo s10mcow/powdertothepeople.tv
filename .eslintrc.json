@@ -1,0 +1,39 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "jasmine": true
+    },
+    "parser": "babel-eslint",
+    "extends": [
+        "xo-space/esnext"
+    ],
+    "plugins": ["html"],
+    "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    },
+    "globals": {
+        "angular": true,
+        "_": true,
+        "inject": false,
+        "installPromiseMatchers": false,
+        "module": false
+    }
+}

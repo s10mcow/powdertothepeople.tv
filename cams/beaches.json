@@ -1,0 +1,28 @@
+{
+    "beaches": [
+        {
+            "name": "Luz",
+            "url": "luz"
+        },
+        {
+            "name": "Lagos",
+            "url": "meiapraia"
+        },
+        {
+            "name": "Arrifana",
+            "url": "arrifana"
+        },
+        {
+            "name": "Amoreira",
+            "url": "bcamoreira"
+        },
+        {
+            "name": "Zambujeira do Mar",
+            "url": "zambujeira"
+        },
+        {
+            "name": "São Torpes",
+            "url": "saotorpes"
+        }
+    ]
+}

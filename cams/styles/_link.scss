@@ -1,0 +1,24 @@
+.links {
+	display: flex;
+  justify-content: center;
+}
+
+.link {
+	background-color: #285AFF;
+	transition: all .2s ease-in-out;
+	margin: 0 5px;
+  cursor: pointer;
+
+	&:hover {
+		background-color: #2735FF;
+	}
+
+  &--active {
+    background-color: #7a7cff;
+  }
+
+	a {
+		color: white;
+		padding: 10px 20px;
+	}
+}

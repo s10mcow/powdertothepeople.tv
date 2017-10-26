@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aljezur Webcams</title>
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="../../styles.css">
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107212380-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)};
+        gtag('js', new Date());
+
+        gtag('config', 'UA-107212380-1');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+
+<header class="page__header">
+    <h1>Aljezur Beach Cams</h1>
+</header>
+
+<section class="players">
+    <article class="player">
+        <video width="100%" height="100%" id="arrifana" controls autoplay></video>
+        <header class="player__header">
+            <h2>Arrifana</h2>
+        </header>
+    </article>
+
+    <article class="player player--small">
+        <video width="100%" height="100%" id="bcamoreira" controls autoplay></video>
+        <header class="player__header">
+            <h2>Amoreira</h2>
+        </header>
+    </article>
+</section>
+
+<ul class="links">
+    <li class="link">
+        <a href="http://powdertothepeople.tv/cams/portugal/south/index.html">South Coast</a>
+    </li>
+
+
+    <li class="link">
+        <a href="http://powdertothepeople.tv/cams/index.html">All Cams</a>
+    </li>
+</ul>
+<script src="http://widget.windguru.cz/js/wg_widget.php" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+    //<![CDATA[
+    WgWidget({
+                s: 27053, odh:0, doh:24, wj:'knots', tj:'c', waj:'m', fhours:72, lng:'en',
+                params: ['WINDSPD','SMER','HTSGW','PERPW','WAVESMER','TMPE'],
+                first_row:true,
+                spotname:true,
+                first_row_minfo:true,
+                last_row:true,
+                lat_lon:false,
+                tz:false,
+                sun:false,
+                link_archive:false,
+                link_new_window:false
+            },
+            'wg_target_div_27053_32622410'
+    );
+    //]]>
+</script>
+<div id="wg_target_div_27053_32622410"></div>
+
+<script src="../../index.js"></script>
+</body>
+</html>
