@@ -1,0 +1,30 @@
+{
+    "short_name": "PTTP Web Cams",
+    "name": "Powder to the people! Web Cams.",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "public/apple-touch-icon-192x192-precomposed.png",
+        "type": "image/png",
+        "sizes": "48x48"
+      },
+      {
+        "src": "public/apple-touch-icon-192x192-precomposed.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "public/apple-touch-icon-192x192-precomposed.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "public/apple-touch-icon-512x512-precomposed.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "theme_color": "grey",
+    "background_color": "white",
+    "start_url": "cams/index.html"
+  }

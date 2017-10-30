@@ -22,8 +22,9 @@ const render = Component =>
 
 // register service worker
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
+    navigator.serviceWorker.register('sw.js');
 }
 
 render(App);
 if (module.hot) module.hot.accept('./App', () => render(App));
+//if (location.protocol != 'https:') { location.href = 'https:' + window.location.href.substring(window.location.protocol.length); }
