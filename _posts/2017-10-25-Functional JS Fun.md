@@ -14,8 +14,8 @@ that need iteration and you use a fucking for loop... but... but... Calm down. Y
 
 Anyways. We got two arrays of objects and we wanna turn it into a nice juicy object. 
 
-The way I see it we got two choices - well more but were using f.u.nctional coding. We can either reduce or we could make an object placeholder and then map, but first
-these are the two arrays. 
+The way I see it we got two choices - well more but we're using f.u.nctional coding. We can either reduce or we could make an object placeholder and then map, but first
+these are the two arrays.
 
 ```
 const links = [
