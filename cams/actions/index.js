@@ -15,8 +15,8 @@ export const setNewCamera = (camera) => {
 export const addNewCamera = () => {
     return {
         type: 'ADD_NEW_CAMERA',
-        url: 'arrifana',
-        name: 'Arrifana'
+        url: 'https://cams.cdn-surfline.com/wsc-east/pt-arrifanacam.stream/chunklist.m3u8',
+        name: 'Arrifana 2'
     }
 };
 

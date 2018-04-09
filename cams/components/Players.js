@@ -8,9 +8,11 @@ export default class PlayersContainer extends Component {
     }
 
     render() {
+        const players = this.props.cameras.length === 1 ? 'players players--single' : 'players';
+
         return (
             <div className="players__wrapper">
-                <section className="players">
+                <section className={players}>
                     {this.props.cameras.map((camera, index) =>
                         <Player
                             key={index}

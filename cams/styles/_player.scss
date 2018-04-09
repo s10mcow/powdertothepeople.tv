@@ -1,5 +1,6 @@
 .player {
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -11,6 +12,19 @@
     .player__delete {
       transform: translateX(0);
       opacity: 1;
+    }
+  }
+
+  &__error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 25%;
+    padding-bottom: 31.25%;
+    div {
+      flex: 1;
     }
   }
 
@@ -87,6 +101,9 @@
 }
 
 .players {
+  &--single {
+    display: flex;
+  }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;

@@ -1,6 +1,10 @@
 import {beaches} from '../beaches.json'
 
-const cameras = (state = beaches.slice(2,4), action) => {
+const initalState = {
+
+}
+
+const cameras = (state = beaches.slice(4,6), action) => {
     switch (action.type) {
         case 'SET_NEW_CAMERA':
             const newState = [...state];

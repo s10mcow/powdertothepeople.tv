@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);.player {
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -11,6 +12,20 @@
 .player:hover .player__delete {
   transform: translateX(0);
   opacity: 1;
+}
+
+.player__error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 25%;
+  padding-bottom: 31.25%;
+}
+
+.player__error div {
+  flex: 1;
 }
 
 .player__content {
@@ -89,6 +104,10 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+}
+
+.players--single {
+  display: flex;
 }
 
 @media (max-width: 960px) {

@@ -11,54 +11,54 @@ export default class Player extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            play: true,
             hls: false,
-            rerender: false,
+            showError: false
         };
     }
 
-    setupPlayer() {
+    setupPlayer(url) {
+        this.setState({showError: false})
+        if(this.state.hls) {
+            this.state.hls.destroy();
+            this.setState({hls: false});
+        }
         if (Hls.isSupported()) {
             let beachHls = new Hls();
-            beachHls.loadSource(`https://video-auth1.iol.pt/beachcam/${this.props.url}/playlist.m3u8`);
+            beachHls.loadSource(url);
             beachHls.attachMedia(this.refs.video);
-            beachHls.on(Hls.Events.MANIFEST_PARSED, () => this.refs.video.play());
+            beachHls.on(Hls.Events.MANIFEST_PARSED, () => {
+                console.log('parsed playing...')
+                this.refs.video.play()
+            });
+            beachHls.on(Hls.Events.ERROR, (event, err) => {
+                console.log(err)
+                if(err.response && err.response.code === 404) {
+                    this.setState({showError: true})
+                    beachHls.destroy();
+                }
+            });
             this.setState({hls: beachHls})
         } else {
-            this.refs.video.src = `https://video-auth1.iol.pt/beachcam/${this.props.url}/playlist.m3u8`;
+            this.refs.video.src = url;
             this.refs.video.play();
         }
 
-        this.setState({rerender:false});
     }
 
-
-
-    pause() {
-        this.setState({play: false});
-        this.state.hls.stopLoad()
-    }
-
-    play() {
-        this.setState({play: true});
-        this.state.hls.startLoad(0)
-        this.state.hls.on(Hls.Events.MANIFEST_PARSED, () => this.refs.video.play());
+    delete() {
+        this.state.hls.destroy();
+        this.setState({hls: false}, () => this.props.deleteCamera({index: this.props.index}));
     }
 
     componentDidMount() {
-        this.setupPlayer()
+        this.setupPlayer(this.props.url)
     }
 
-    componentWillUpdate() {
-        this.refs.video.pause()
-    }
 
-    componentDidUpdate() {
-       this.setupPlayer()
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return nextProps.url !== this.props.url;
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.url !== this.props.url) {
+            this.setupPlayer(nextProps.url)
+        }
     }
 
     render() {
@@ -73,18 +73,24 @@ export default class Player extends Component {
 
             </div>;
 
-        const playPause = this.state.play ?
-            <Button className="player__toggle-play" variant="fab" color="pimary" onClick={() => this.pause()}><i className="fa fa-pause"></i></Button>
+        const playerContent =
+
+            this.state.showError ?
+
+            <main className="player__error">
+                <div>Whoops... Camera isnt working.</div>
+                <div>:(</div>
+            </main>
             :
-            <Button className="player__toggle-play" variant="fab" color="pimary" onClick={() => this.play()}><i className="fa fa-play"></i></Button>
+            <main className="player__content">
+                <Button className="player__delete" variant="fab" color="danger" onClick={() => this.delete()}>&times;</Button>
+                <video ref="video" autoPlay controls></video>
+            </main>
 
         return (
             <article className="player">
 
-                <main className="player__content">
-                    <Button className="player__delete" variant="fab" color="danger" onClick={() => this.props.deleteCamera({index: this.props.index})}>&times;</Button>
-                    <video ref="video" autoPlay controls></video>
-                </main>
+                {playerContent}
 
                 <footer className="player__footer">
                     {footer}

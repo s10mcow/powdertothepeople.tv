@@ -1,28 +1,56 @@
 {
     "beaches": [
         {
-            "name": "Luz",
-            "url": "luz"
+            "name": "Luz 1",
+            "url": "https://video-auth1.iol.pt/beachcam/luz/playlist.m3u8"
         },
         {
-            "name": "Lagos",
-            "url": "meiapraia"
+            "name":"Luz 2",
+            "url": "https://cams.cdn-surfline.com/wsc-east/pt-praiadaluzcam.stream/playlist.m3u8"
         },
         {
-            "name": "Arrifana",
-            "url": "arrifana"
+            "name": "Lagos 1",
+            "url": "https://video-auth1.iol.pt/beachcam/meiapraia/playlist.m3u8"
+        },
+        {
+            "name":"Lagos 2",
+            "url": "https://cams.cdn-surfline.com/wsc-east/pt-meiapraiacam.stream/chunklist.m3u8"
+        },
+        {
+            "name": "Arrifana 1",
+            "url": "https://video-auth1.iol.pt/beachcam/arrifana/playlist.m3u8"
+        },
+        {
+            "name": "Arrifana 2",
+            "url": "https://cams.cdn-surfline.com/wsc-east/pt-arrifanacam.stream/chunklist.m3u8"
         },
         {
             "name": "Amoreira",
-            "url": "bcamoreira"
+            "url": "https://video-auth1.iol.pt/beachcam/bcamoreira/playlist.m3u8"
         },
         {
             "name": "Zambujeira do Mar",
-            "url": "zambujeira"
+            "url": "https://video-auth1.iol.pt/beachcam/zambujeira/playlist.m3u8"
         },
         {
-            "name": "São Torpes",
-            "url": "saotorpes"
+            "name": "Super Tubos",
+            "url": "https://cams.cdn-surfline.com/wsc-east/pt-supertubescam.stream/playlist.m3u8"
+        },
+        {
+            "name": "São Torpes 1",
+            "url": "https://video-auth1.iol.pt/beachcam/saotorpes/playlist.m3u8"
+        },
+        {
+            "name": "São Torpes 2",
+            "url": "https://cams.cdn-surfline.com/wsc-east/pt-storpespiercam.stream/playlist.m3u8"
+        },
+        {
+            "name": "South Sagres",
+            "url": "https://cams.cdn-surfline.com/wsc-east/pt-maretacam.stream/playlist.m3u8"
+        },
+        {
+            "name": "Nazare",
+            "url": "https://cams.cdn-surfline.com/wsc-east/pt-nazareovcam.stream/playlist.m3u8"
         }
     ]
 }
