@@ -32,10 +32,6 @@
         "jest": "^20.0.4",
         "loglevel": "^1.4.1",
         "postcss-loader": "^1.2.2",
-        "react-addons-test-utils": "^15.6.0",
-        "react-hot-loader": "^3.0.0-beta.7",
-        "react-redux": "^5.0.6",
-        "react-test-renderer": "^15.6.1",
         "style-loader": "0.13.1",
         "url-loader": "0.5.7",
         "webpack": "^3.3.0",
@@ -45,17 +41,11 @@
         "workbox-webpack-plugin": "^2.1.0"
     },
     "dependencies": {
-        "hls.js": "^0.8.4",
-        "muicss": "^0.9.27",
-        "node-sass": "^4.5.3",
-        "react": "^16.0.0",
-        "react-dom": "^16.0.0",
-        "redux": "^3.7.2",
         "sass-loader": "^6.0.6"
     },
     "scripts": {
-        "build": "webpack --config webpack.production.config.js --progress --profile --colors",
-        "start": "webpack-dev-server --progress --profile --colors",
+        "build": "jekyll build",
+        "start": "jekyll serve --watch",
         "lint": "eslint --ext js --ext jsx src || exit 0",
         "dev": " webpack-dashboard -- webpack-dev-server",
         "test": "export NODE_ENV=test && jest"
