@@ -1,4 +1,4 @@
 ---
-permalink: /cams
-redirect_to: 'https://came.powdertothepeople.tv'
+title: cams
+redirect_to: https://cams.powdertothepeople.tv
 ---

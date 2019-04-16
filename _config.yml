@@ -23,4 +23,6 @@ paginate: 5
 
 # Custom vars
 
-plugins: [jekyll-paginate, jekyll-redirect-from]
+plugins:
+    - jekyll-paginate
+    - jekyll-redirect-from
