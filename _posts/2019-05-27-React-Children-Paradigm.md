@@ -79,7 +79,7 @@ as we depend on certain data being in the app, we can add a simple loader or spl
 So in my saga file the app init looks something like this.
 
 ```javascript
-function* appInitWorker() {
+function* appInit() {
     yield call(fetchUser);
 
     yield put(actions.setAppUserInitialized()); //<----- Kicks off the AppReadyWaiter
