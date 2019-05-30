@@ -17,7 +17,7 @@ Anyways. We got two arrays of objects and we wanna turn it into a nice juicy obj
 The way I see it we got two choices - well more but we're using f.u.nctional coding. We can either reduce or we could make an object placeholder and then map, but first
 these are the two arrays.
 
-```
+```javascript
 const links = [
     {code: 'home'},
     {code: 'contact'}
@@ -32,7 +32,7 @@ const subLinks = [
 
 Desired result is this. 
 
-```
+```javascript
 const menu = {
     home: ['abc', 'def'],
     contact: ['xyz'] 
@@ -41,7 +41,7 @@ const menu = {
 
 So the first solution without reduce. 
 
-```
+```javascript
 const menu = {};
 
 links.map(link => menu[link.code] = subLinks
@@ -56,7 +56,7 @@ Bam, simple... and somewhat elegant - three lines of logic.
 
 Now onto the reduce example. 
 
-```
+```javascript
 const menu = links.reduce((memo, menu) => {
     memo[menu.code] = subLinks
         .filter(sl => sl.parent.code === menu.code)

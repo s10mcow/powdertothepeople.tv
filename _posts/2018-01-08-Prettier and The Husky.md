@@ -38,7 +38,7 @@ We're gonna use [Pretty-Quick](https://github.com/azz/pretty-quick) but same dea
 
 Npm install all the things, and then in your package.json's script section...
 
-```
+```javascript
 "scripts": {
      "precommit": "pretty-quick --staged"
 }

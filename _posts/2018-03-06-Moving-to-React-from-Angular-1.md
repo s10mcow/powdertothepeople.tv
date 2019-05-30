@@ -36,7 +36,7 @@ So in short Redux has two main parts - actions and reducers. No need to really w
 
 You dispatch and action and the reducer consumes it, but when you see this one line action method how does this get to the reducer?
 
-```
+```javascript
     export const someAction = goodies => ({
         type: SOME_ACTION, goodies
     });
@@ -45,7 +45,7 @@ You dispatch and action and the reducer consumes it, but when you see this one l
 When you import this action you dispatch it. 
 
 
-```
+```javascript
     import someAction from './actions/someAction.js';
 
     const mapDispatchToProps = (dispatch, ownProps) => {

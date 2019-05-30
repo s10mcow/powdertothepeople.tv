@@ -6,7 +6,7 @@ title: Angular Component Template Unit Testing.
 
 https://stackoverflow.com/questions/41624014/how-to-unit-test-an-angular-1-5-component-template
 
-```  
+```javascript
 
 	it('should move to the previous period', inject(($compile) => {
        scope.test = {};

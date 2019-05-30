@@ -12,7 +12,7 @@ Manually convert? Fuck no!
 Automatically convert? Fuck yes!
 
 
-```
+```javascript
 sass-convert -R --from sass --to scss ./path/to/files
 ```
 

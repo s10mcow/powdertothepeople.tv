@@ -25,7 +25,7 @@ I made this originally for an angular app so this will be an AngularJS component
 
 Onto the goodies.
 
-```
+```html
  <article class="pttp-image-placeholder" title="{ {$ctrl.title} }">
  
     <a 
@@ -45,7 +45,7 @@ So as you can see the template is pretty simple. We have component wrapper and i
 
 The SCSS magic that allows this to happen...
 
-```
+```css
 
 .pttp-image-placeholder {
   padding-bottom: 150%;
@@ -101,7 +101,7 @@ Pretty simple.
 
 The final ng component looks like this.
 
-```
+```javascript
 
 angular.module('PTTP')
   .component('pttpImagePlaceholder', {
@@ -116,7 +116,7 @@ angular.module('PTTP')
 
 A React component could look something like this...
 
-```
+```javascript
 const PTTPImagePlaceholder = ({title, image, url}) => {
      const backgroundImage = {backgroundImage: 'url(${image})'} //' are actually backticks 
      return (
