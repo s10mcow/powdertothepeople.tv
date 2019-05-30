@@ -34,7 +34,7 @@ export default connect(
 
 This is a fairly simple straight forward component it basically just kicks off some app init activity. We can include it in the app like so.
 
-```javascript
+```jsx
 const render = Component => (
     <Provider>
         <AppStartup />
@@ -53,7 +53,7 @@ So when the app tree is kicked off in the index.js file `<AppStartup/>` does it 
 
 Next we can see the `<AppReadyWaiter/>` and as the name suggests it waits until the app is ready. Here is where we can use some of the `this.props.children` magic.
 
-```javascript
+```jsx
 class AppReadyWaiter extends React.PureComponent {
     render() {
         const { appUserInitialized, children } = this.props;
