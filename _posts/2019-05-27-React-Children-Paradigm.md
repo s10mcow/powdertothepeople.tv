@@ -13,10 +13,6 @@ This pattern is made up of two components `<AppStartup/>` and `<AppReadyWaiter/>
 ## <AppStartup/>
 
 ```javascript
-import * as React from 'react';
-import { connect } from 'react-redux';
-import actions from '../../store/App/app.action';
-
 class AppStartup extends React.PureComponent {
     componentDidMount() {
         this.props.initApp();
@@ -83,7 +79,7 @@ as we depend on certain data being in the app, we can add a simple loader or spl
 So in my saga file the app init looks something like this.
 
 ```javascript
-function* appInitWorker(): Saga<void> {
+function* appInitWorker() {
     yield call(fetchUser);
 
     yield put(actions.setAppUserInitialized()); //<----- Kicks off the AppReadyWaiter
