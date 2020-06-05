@@ -10,13 +10,13 @@ permalink: pretty
 
 # Setup
 title: Powder to the People
-tagline: 'Whatever your powder is...'
-description: 'Frontend Fun!'
-url: http://www.powdertothepeople.tv
+tagline: "Whatever your powder is..."
+description: "Frontend Fun!"
+url: https://www.powdertothepeople.tv
 baseurl: /
 
 author:
-    name: 'Sten Muchow'
+    name: "Sten Muchow"
     url: https://twitter.com/powdertothepeople
 
 paginate: 5
