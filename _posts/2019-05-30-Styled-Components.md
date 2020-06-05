@@ -15,7 +15,7 @@ Having used all the above, I can say that using the styled component paradigm in
 
 ## Ease in including
 
-Wanna start to use styled components, easy jump right in! yarn or npm install them and away you go. No need to hook up post processor, or other complicated parts to the build pipe, less config === more fun. If you wanna start usin themes aka a colors JS file
+Wanna start to use styled components, easy jump right in! yarn or npm install them and away you go. No need to hook up post processor, or other complicated parts to the build pipe, less config === more fun. If you wanna start using themes aka a colors JS file
 just wrap your base App.js component in a handy `ThemeProvider` tag.
 
 ## Single Source of Truth
@@ -33,7 +33,7 @@ If you are coming from a SCSS background as many of us are - since it's one of t
 ## Direct access to JS
 
 This is where we start to get turbo charged. React is all about passing props around, so taking advantage of this is key. No longer do we need to add and remove classes (although you still can), to alter styling. We can
-directly pass JS propsto our styled components and also have JS to work on those props if we want. This massively cleans up our html structure which leads the readability, and off loads complexity to where it makes the most
+directly pass JS props to our styled components and also have JS to work on those props if we want. This massively cleans up our html structure which leads the readability, and off loads complexity to where it makes the most
 sense - determining how the UI component should look like. Since the component has access similatiously to all props passed into it we can get into much more complex styling and debugging rather than just a slew of appended classnames.
 
 ### Summary
